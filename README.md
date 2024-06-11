@@ -30,7 +30,3 @@ This repository contains scripts used for processing and analyzing molecular dyn
 ## Contact
 
 For any questions or suggestions, please contact: biofisicadeacuaporinas@gmail.com
-
-## License
-
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License]
