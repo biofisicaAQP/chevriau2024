@@ -1,0 +1,18 @@
+set PARM=topology.parm7
+set OFFSET=1
+set DIR=/mnt/storage/home/jota/tmp
+
+#pore residues list
+set PORE=51,55,59,83,84,87,88,91,95,99,103,104,105,106,107,110,114,119,120,157,159,181,185,188,189,200,201,202,203,204,205,208,209,212,216,220,223,224,225,226,227,228,231
+
+parm $PARM
+trajin Trayectoria/[0-9]00ns.nc 1 last $OFFSET
+trajin Trayectoria/[1-2][0-9]00ns.nc 1 last $OFFSET
+autoimage
+hbond DATASET1 donormask :WAT acceptormask :$PORE series uuseries $DIR/aceptor_WAT.dat 
+hbond DATASET2 donormask :$PORE acceptormask :WAT series uuseries $DIR/donor_WAT.dat
+hbond DATASET3 donormask :AOX acceptormask :$PORE series uuseries $DIR/aceptor_AOX.dat 
+hbond DATASET4 donormask :$PORE acceptormask :AOX series uuseries $DIR/donor_AOX.dat
+
+go
+exit
